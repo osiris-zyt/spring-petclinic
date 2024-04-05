@@ -5,7 +5,7 @@ pipeline {
       steps {
         withMaven() {
           sh './mvnw package'
-          sh 'java -jar target/*.jar'
+          sh './mvnw spring-boot:run'
         }
 
       }
