@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       environment {
-        SCANNER_HOME = tool 'sonaqube_scanner'
+        SCANNER_HOME = 'sonaqube_scanner'
       }
       steps {
         withMaven() {
@@ -11,10 +11,7 @@ pipeline {
         }
 
         withSonarQubeEnv(installationName: 'my_sonarqube', credentialsId: '82eb34fe-ee23-4cf8-a395-e011982a10c1') {
-          sh '$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=petclinic \
-             -Dsonar.projectName=petclinic \
-             -Dsonar.sources=target/ \
-             -Dsonar.token=sqa_c2911b564f9d8e7b01fe05e4f8d6ca475ed982c2'
+          sh '$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=petclinic              -Dsonar.projectName=petclinic              -Dsonar.token=sqa_c2911b564f9d8e7b01fe05e4f8d6ca475ed982c2'
         }
 
       }
