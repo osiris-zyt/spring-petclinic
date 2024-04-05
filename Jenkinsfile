@@ -5,7 +5,7 @@ pipeline {
       steps {
         withMaven() {
           sh './mvnw package'
-          sh './mvnw spring-boot:run'
+          sh './mvnw spring-boot:build-image'
         }
 
       }
