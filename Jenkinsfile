@@ -10,7 +10,7 @@ pipeline {
           sh './mvnw package'
         }
 
-        withSonarQubeEnv('my_sonarqube') {
+        withSonarQubeEnv(installationName: 'my_sonarqube', credentialsId: '82eb34fe-ee23-4cf8-a395-e011982a10c1') {
           sh '$SCANNER_HOME/bin/sonar-scanner          -Dsonar.projectKey=spring-petclinic          -Dsonar.projectName=spring-petclinic          -Dsonar.sources=target/ '
         }
 
