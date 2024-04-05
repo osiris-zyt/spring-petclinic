@@ -9,7 +9,7 @@ pipeline {
         withMaven() {
           sh './mvnw package'
         }
-        withSonarQubeEnv() {
+        withSonarQubeEnv(installationName: 'my_sonarqube') {
           sh '$SCANNER_HOME/bin/sonar-scanner \
          -Dsonar.projectKey=spring-petclinic \
          -Dsonar.projectName=spring-petclinic \
