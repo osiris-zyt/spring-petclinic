@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       environment {
-        SCANNER_HOME = 'sonaqube_scanner'
+        SCANNER_HOME = tool'sonaqube_scanner'
       }
       steps {
         withMaven() {
