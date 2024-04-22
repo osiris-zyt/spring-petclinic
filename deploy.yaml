@@ -7,6 +7,6 @@
     - name: Copy jar file
       copy:
         src: "target/{{ jar_file }}"
-        dest: "~/app/{{ jar_file }}"
+        dest: "/app/{{ jar_file }}"
     - name: Start jar file
       shell: java -jar {{ jar_file }}
