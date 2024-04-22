@@ -15,7 +15,6 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'pwd'
         ansiblePlaybook(
                     inventory: 'inventory.ini',
                     playbook: 'deploy.yaml'
