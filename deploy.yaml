@@ -6,7 +6,7 @@
   tasks:
     - name: Copy jar file
       copy:
-        src: "var/jenkins_home/workspace/spring-petclinic_main/target/{{ jar_file }}"
+        src: "{{ jar_file }}"
         dest: "/app/{{ jar_file }}"
     - name: Start jar file
       shell: java -jar {{ jar_file }}
