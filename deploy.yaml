@@ -1,5 +1,5 @@
 ---
-- hosts: target-server
+- hosts: 172.17.0.3
   remote_user: root
   vars:
     jar_file: spring-petclinic-3.2.0-SNAPSHOT.jar
