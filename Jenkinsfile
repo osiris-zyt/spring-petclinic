@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       environment {
-        SCANNER_HOME = tool'sonaqube_scanner'
+        SCANNER_HOME = 'sonaqube_scanner'
       }
       steps {
         withMaven() {
@@ -12,12 +12,12 @@ pipeline {
 
       }
     }
+
     stage('Deploy') {
-            steps {
-                ansiblePlaybook playbook: 'deploy.yaml'
-                
-            }
-        }
+      steps {
+        ansiblePlaybook 'deploy.yaml'
+      }
+    }
 
   }
 }
