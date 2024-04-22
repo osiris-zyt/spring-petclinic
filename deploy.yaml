@@ -4,9 +4,11 @@
   vars:
     jar_file: spring-petclinic-3.2.0-SNAPSHOT.jar
   tasks:
+    - name: List current directory
+      command: pwd
     - name: Copy jar file
       copy:
-        src: "/target/"
+        src: "/"
         dest: "/app/"
     - name: Start jar file
       shell: java -jar {{ jar_file }}
