@@ -1,0 +1,12 @@
+---
+- hosts: target-server
+  remote_user: root
+  vars:
+    jar_file: spring-petclinic-3.2.0-SNAPSHOT.jar
+  tasks:
+    - name: Copy jar file
+      copy:
+        src: "/target/{{ jar_file }}"
+        dest: "/app/{{ jar_file }}"
+    - name: Start jar file
+      shell: java -jar {{ jar_file }}
